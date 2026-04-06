@@ -1,4 +1,1 @@
-import { loadHome } from "../public/templates/home/home.js"
-;
-
-loadHome()
+import './modules/router.js'
