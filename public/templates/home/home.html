@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="templates/home/livros_carrossels.js"></script>
+    <link rel="stylesheet" href="css/home.css">
     <title>Home - LibDB</title>
 </head>
 <body>
     <section id="home">
-            <section id="navbar">
-                <search id="barra-pesquisa">
-            </search>
+        <h1>Minha biblioteca</h1>
+        <section id="navbar">
+            <input type="text" placeholder="Digite um autor, livro ou tema...">
+            <button type="submit">Buscar</button>
         </section>
-
+        
         <section id="livros-container">
             <div id="sidebar">
 
             </div>
-            <div>
+            <div id="livros-autores">
+                <h1 id="livros-autor"></h1>
+                <div id="livros-carossels"></div>
+            </div>
                 
             </div>
         </section>
