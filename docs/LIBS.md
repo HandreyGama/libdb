@@ -99,7 +99,3 @@ const myChart = new Chart(ctx, {
 ```
 
 ---
-
-Se você quiser, posso já preparar um **exemplo de página completa** do LibDB usando **Vite.js** com **Anime.js** e **Chart.js** integrados, mostrando uma animação de botão que depois abre uma página com gráfico. Isso deixaria o Docs bem visual e prático.
-
-Quer que eu faça isso?
