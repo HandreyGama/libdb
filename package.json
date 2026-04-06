@@ -1,19 +1,16 @@
 {
-  "name": "libdb",
-  "version": "0.0.0",
-  "private": true,
+  "name": "libdb-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "app"
   },
-  "devDependencies": {
-    "vite": "^8.0.1"
-  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "animejs": "^3.2.1",
-    "express": "^5.2.1",
-    "navigo": "^8.11.1"
+    "animejs": "^4.3.6",
+    "express": "^5.2.1"
   }
 }
