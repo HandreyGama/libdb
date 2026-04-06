@@ -5,11 +5,36 @@ body{
 }
 html{
     width: 100vw;
+    background: linear-gradient(#c0b5ff 50%, #fab1fe 100%);
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+#minha-biblioteca-titulo{
+    font-size: 4em;
+    margin-top: 20px;
+    margin: center;
+}
+#livros-autor{
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 #home{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#navbar input{
+    height: 5vh;
+    width: 100%;
+    min-width: 200px;
+    background-color: #EAE6FF;
+    border-radius: 20px;
+    border-width: 0px;
+    padding: 10px;
+    margin: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.41);
+    transition: all 0.3s ease-in-out;
 }
 #livros-carossels{
     display: flex;
@@ -21,6 +46,10 @@ html{
     overflow: hidden;   /* 🔥 ESSENCIAL */
     overflow-x: auto;
     gap: 30px;
+    background-color: #eaf3f5;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 5px 5px 5px 5px rgba(28, 1, 30, 0.386);
 }
 .livros-cards{
     display: flex;
