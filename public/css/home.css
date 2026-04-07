@@ -1,10 +1,10 @@
 body{
     padding: 0;
     margin: 0;
-    width: 100vw;
+    width: 100%;
 }
 html{
-    width: 100vw;
+    width: 100%;
     background: linear-gradient( #b18566 50%, #3a2211 100%);
     height: 100%;
     background-repeat: no-repeat;
@@ -50,25 +50,58 @@ html{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.41);
     transition: all 0.3s ease-in-out;
 }
+
 #livros-carossels{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+
+    flex-wrap: nowrap; 
+    width: auto;
     height: 30%;
-    max-width: 90vw;
-    overflow: hidden; 
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 30px;
-    background-color: #eaf3f5;
+    backdrop-filter: blur(10px);
+    background-color: #eaf3f547;
     border-radius: 10px;
     padding: 40px;
     box-shadow: 5px 5px 5px 5px rgba(28, 1, 30, 0.386);
 }
+#carrossel-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.livros-carrossel-button{
+    width: 2vw;
+    height: 4vh;
+    border-width: 0px;
+    margin: 10px;
+    font-size: 30px;
+    transition: all 300ms ease-in-out;
+    border-radius: 10px;
+}
+.livros-carrossel-button:hover{
+    transform: scale(1.5);
+}
 .livros-cards{
     display: flex;
+    flex: 0 0 auto;
     flex-shrink: 0;
     gap: 10px;
     width: 200px;
     font-size: 14px;
+}
+
+.livro-capa{
+    transition: transform 0.3s ease;
+}
+.livro-capa.on {
+    transform: scale(1.1);
+}
+
+#livros-autores {
+    width: 100%;
+    max-width: 90vw;
 }
