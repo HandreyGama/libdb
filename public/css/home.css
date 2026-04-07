@@ -9,7 +9,13 @@ html{
     height: 100%;
     background-repeat: no-repeat;
 }
-
+#buscar-button{
+   background: linear-gradient(#d781d3 0%, #b497ff 100%);
+   border-radius: 10px;
+   color: white;
+   width: 5vw;
+   height: 5vh;
+}
 #minha-biblioteca-titulo{
     font-size: 4em;
     margin-top: 20px;
@@ -24,9 +30,16 @@ html{
     flex-direction: column;
     align-items: center;
 }
+#navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 #navbar input{
     height: 5vh;
-    width: 100%;
+    width: 40vw;
     min-width: 200px;
     background-color: #EAE6FF;
     border-radius: 20px;
