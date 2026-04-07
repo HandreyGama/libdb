@@ -4,34 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibDB</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../../css/login.css">
     <script type="module" src="templates/login/anime.js"></script>
 </head>
 <body>
     <section id="login">
         <div id="login-container">
-            <h1 id="login-title"> Bem vindo!</h1>
+            <h1 id="login-title"><img class="img_livro_logo" src="/public/assets/images-removebg-preview.png" alt=""> MYLibrary</h1>
+            <h3 id="login-subtitle">Bem-vindo de volta </h3>
+            <p id="login-sub">Faça seu login para continuar</p>
             <form id="login-form" action="">
                 <div></div>
-                <label for="email-input">Email: </label>
+                <label id="text-email" for="email-input">Email: </label>
                 <input type="email" id="email-input" class="text-input" placeholder="user123@gmail.com">
-                <label for="passowrd-input">Senha: </label>
+                <label id="text-senha" for="passowrd-input">Senha: </label>
                 <input type="password" id="password-input" class="text-input" placeholder="*******">
                 <p>Esqueceu a senha?</p>
                 <div id="login-checkboxes">
                     <div>
                         <input type="checkbox" name="ver-senha"  id="show-password-checkbox">
-                        <label for="ver-senha">Mostrar senha</label>
+                        <label class="text-ver" for="ver-senha">Mostrar senha</label>
                     </div>
                     <div>
                         <input type="checkbox" name="lembre-se"  id="remember-me-checkbox">
-                        <label for="">Lembre-se</label>
+                        <label class="text-lembre" for="">Lembre-se</label>
                     </div>
                     
                     
                 </div>
                 <div id="login-buttons">
-                    <button id="login-button">Logar</button>
+                    <button class="login-button">Logar</button>
                     <button id="register-button">Criar nova conta!</button>
                 </div>
             </form>
