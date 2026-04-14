@@ -1,107 +1,314 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+/* ── Variables ──────────────────────────────────── */
+:root {
+    --accent:       #d4830a;
+    --accent-hover: #b86d08;
+    --brown-dark:   #3a2211;
+    --brown-mid:    #8e5c3a;
+    --brown-light:  #c9956a;
+    --cream:        #faf6ee;
+    --text:         #2c1a0e;
+    --text-muted:   #7a5c46;
+    --radius:       12px;
+    --transition:   0.25s ease;
+}
+
+/* ── Base ───────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
     padding: 0;
     margin: 0;
     width: 100%;
+    font-family: 'Lato', sans-serif;
 }
-html{
+
+html {
     width: 100%;
-    background: linear-gradient( #b18566 50%, #3a2211 100%);
     height: 100%;
+    background-color: #f5f0e8;
     background-repeat: no-repeat;
-    color: white;
+    color: var(--text);
 }
-#buscar-button{
-   background: linear-gradient(#5f4a3e 0%, #8e5c44 100%);
-   border-radius: 10px; border-color: #302520;
-   color: white;
-   width: 5vw;
-   height: 5vh;
-}
-#minha-biblioteca-titulo{
-    font-size: 3em;
-    margin-top: 40px;
-    margin: center;
-}
-#livros-autor{
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-#home{
+
+/* ── Page wrapper ───────────────────────────────── */
+#home {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
-#navbar{
+
+/* ── Hero / Header area ─────────────────────────── */
+#minha-biblioteca-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    line-height: 1.15;
+    /* sits inside a pseudo-hero created via #home::before */
+}
+
+/* Make the top section look like the hero banner in the reference */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 320px;
+    background:
+        linear-gradient(to bottom, rgba(28,17,10,0.38) 0%, rgba(28,17,10,0.72) 100%),
+        url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1600&q=80') center / cover no-repeat;
+    z-index: 0;
+}
+
+/* Push title + navbar on top of the pseudo-hero */
+#minha-biblioteca-titulo,
+#navbar {
+    position: relative;
+    z-index: 1;
+}
+
+#minha-biblioteca-titulo {
+    margin-top: 56px;
+    align-self: flex-start;
+    padding-left: clamp(24px, 6vw, 80px);
+    width: 100%;
+}
+
+/* ── Navbar / Search ─────────────────────────────── */
+#navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    width: 100%;
+    padding: 20px clamp(24px, 6vw, 80px) 48px;
+    align-self: flex-start;
 }
-#navbar input{
-    height: 5vh;
+
+#navbar input {
+    height: 46px;
     width: 40vw;
     min-width: 200px;
-    background-color: #EAE6FF;
-    border-radius: 20px;
-    border-width: 0px;
-    padding: 10px;
-    margin: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.41);
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    border-width: 0;
+    padding: 0 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease-in-out;
+    outline: none;
 }
 
-#livros-carossels{
-    display: flex;
+#navbar input::placeholder {
+    color: #9a7a65;
+}
 
-    flex-wrap: nowrap; 
+#navbar input:focus {
+    box-shadow: 0 4px 24px rgba(212, 131, 10, 0.45);
+}
+
+#buscar-button {
+    height: 46px;
     width: auto;
-    height: 30%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 30px;
-    backdrop-filter: blur(10px);
-    background-color: #eaf3f547;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 5px 5px 5px 5px rgba(28, 1, 30, 0.386);
+    min-width: 110px;
+    padding: 0 22px;
+    background: linear-gradient(#5f4a3e 0%, #8e5c44 100%);
+    border-radius: 100px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
 }
-#carrossel-container{
+
+#buscar-button:hover {
+    background: linear-gradient(#6e5548 0%, #a06b4e 100%);
+    transform: scale(1.04);
+}
+
+/* ── Content area (sidebar + carousel) ─────────── */
+#livros-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1300px;
+    gap: 32px;
+    padding: 36px 24px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Sidebar ────────────────────────────────────── */
+#sidebar {
+    flex: 0 0 220px;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px 16px;
+    box-shadow: 0 2px 16px rgba(58, 34, 17, 0.08);
+    position: sticky;
+    top: 24px;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* ── Carousel wrapper ───────────────────────────── */
+#carrossel-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.livros-carrossel-button{
-    width: 2vw;
-    height: 4vh;
-    border-width: 0px;
-    margin: 10px;
-    font-size: 30px;
-    transition: all 300ms ease-in-out;
-    border-radius: 10px;
-}
-.livros-carrossel-button:hover{
-    transform: scale(1.5);
-}
-.livros-cards{
-    display: flex;
-    flex: 0 0 auto;
-    flex-shrink: 0;
-    gap: 10px;
-    width: 200px;
-    font-size: 14px;
-}
-
-.livro-capa{
-    transition: transform 0.3s ease;
-}
-.livro-capa.on {
-    transform: scale(1.1);
+    flex: 1;
+    min-width: 0;
 }
 
 #livros-autores {
     width: 100%;
     max-width: 90vw;
+}
+
+#livros-autor {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--brown-dark);
+}
+
+/* ── The scrollable book strip ──────────────────── */
+#livros-carossels {
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 24px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(234, 243, 245, 0.28);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    box-shadow: 0 4px 24px rgba(28, 1, 30, 0.15);
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown-light) transparent;
+}
+
+#livros-carossels::-webkit-scrollbar {
+    height: 6px;
+}
+#livros-carossels::-webkit-scrollbar-track {
+    background: transparent;
+}
+#livros-carossels::-webkit-scrollbar-thumb {
+    background: var(--brown-light);
+    border-radius: 10px;
+}
+
+/* ── Arrow buttons ──────────────────────────────── */
+.livros-carrossel-button {
+    width: 40px;
+    height: 40px;
+    border-width: 0;
+    margin: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 300ms ease-in-out;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--brown-dark);
+    box-shadow: 0 2px 10px rgba(58, 34, 17, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.livros-carrossel-button:hover {
+    transform: scale(1.25);
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(212, 131, 10, 0.4);
+}
+
+/* ── Individual book card ───────────────────────── */
+.livros-cards {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    gap: 10px;
+    width: 190px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(58, 34, 17, 0.1);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.livros-cards:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(58, 34, 17, 0.2);
+}
+
+/* ── Book cover image ───────────────────────────── */
+.livro-capa {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius) var(--radius) 0 0;
+    transition: transform 0.3s ease;
+}
+
+.livro-capa.on {
+    transform: scale(1.08);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+    #livros-container {
+        flex-direction: column;
+        padding: 24px 16px 48px;
+    }
+
+    #sidebar {
+        position: static;
+        width: 100%;
+        flex: none;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 24px 36px;
+    }
+
+    #navbar input {
+        width: 100%;
+    }
+
+    #buscar-button {
+        width: 100%;
+    }
+
+    .livros-carrossel-button {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
 }
