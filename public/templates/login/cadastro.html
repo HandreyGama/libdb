@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibDB</title>
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/cadastro.css">
     <script type="module" src="templates/login/anime.js"></script>
 </head>
 <body>
            <section id="login">
             <div id="login-container">
                 <h1 id="login-title"><alt=""> MYLibrary</h1>
-                <h3 id="login-subtitle">Bem-vindo de volta </h3>
-                <p id="login-sub">Faça seu login para continuar</p>
+                <h3 id="login-subtitle">Seja Bem-vindo </h3>
+                <p id="login-sub">Realize seu cadastro para continuar</p>
                 <form id="login-form" action="">
             <div></div>
-
+                
+                <label id="text-nome" for="nome-input">Nome:</label> 
+                <input type="text" id="nome-input" class="text-input" placeholder="Seunome">
+                
                 <label id="text-email" for="email-input">Email: </label>
                 <input type="email" id="email-input" class="text-input" placeholder="user123@gmail.com">
                 
                 <label id="text-senha" for="passowrd-input">Senha: </label>
                 <input type="password" id="password-input" class="text-input" placeholder="*******">
                 
-                <p>Esqueceu a senha?</p>
+               
                 <div id="login-checkboxes">
                     <div>
                         <input type="checkbox" name="ver-senha"  id="show-password-checkbox">
@@ -36,8 +39,8 @@
                     
                 </div>
                 <div id="login-buttons">
-                    <button class="login-button">Logar</button>
-                    <button id="register-button"><a href="cadastro.html">Criar nova conta</a></button>
+                    <button class="login-button">Cadastrar</button>
+                    <button id="register-button"><a href="login.html">Mudar para tela de login</a></button>
                 </div>
             </form>
         </div>
