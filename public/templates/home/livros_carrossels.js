@@ -3,12 +3,12 @@ import { pegar_livros_por_autor, pegar_capa_livro } from "../../src/modules/api.
 document.addEventListener('DOMContentLoaded',async () =>{
     const div_carrossels = document.getElementById('livros-carossels')
     const div_livros_autores = document.getElementById('livros-autores')
-    const livros_tolkien = await pegar_livros_por_autor('colleen-hoover')
+    const livros_tolkien = await pegar_livros_por_autor('tolkien')
     const titulo_autor = document.getElementById("livros-autor")
     const btnPrev = document.getElementById("livros-carrossel-button-left")
     const btnNext = document.getElementById("livros-carrossel-button-right")
     let currentBook = 0;
-    titulo_autor.innerText = "colleen hoover"
+    titulo_autor.innerText = "tolkien"
     const lista_livros = livros_tolkien.docs
     
     for (const element of lista_livros) {
