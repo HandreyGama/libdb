@@ -173,7 +173,14 @@ html {
     flex: 1;
     min-width: 0;
 }
-
+.carrossel-autor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
 #livros-autores {
     width: 100%;
     max-width: 90vw;
@@ -189,6 +196,23 @@ html {
 
 /* ── The scrollable book strip ──────────────────── */
 #livros-carossels {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 24px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(234, 243, 245, 0.28);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    box-shadow: 0 4px 24px rgba(28, 1, 30, 0.15);
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown-light) transparent;
+}
+.autor-carrossel-livros {
     display: flex;
     flex-wrap: nowrap;
     width: auto;

@@ -1,8 +1,11 @@
 {
-    "tolkien":"tolkien",
-    "jkrowling":"rowling",
-    "colleen-hoover":"colleen hoover",
-    "machado":"machado de assis",
-    "ali hazelwood":"ali hazelwood",
-    "jane austen":"jane austen"
+    "autores":[
+        "tolkien",
+        "rowling",
+        "colleen hoover",
+        "machado de assis",
+        "ali hazelwood",
+        "jane austen"
+    ]
+
 }
