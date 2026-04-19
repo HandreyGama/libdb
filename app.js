@@ -11,6 +11,9 @@ app.use(express.static('public'))
 app.get('/', (req,res) =>{
     res.sendFile('/templates/login/login.html', { root: path.join(__dirname, 'public') })
 })
+app.get('/register', (req,res) =>{
+    res.sendFile('/templates/login/cadastro.html', { root: path.join(__dirname, 'public') })
+})
 app.get('/home', (req,res) =>{
     res.sendFile('/templates/home/home.html', { root: path.join(__dirname, 'public') })
 })
