@@ -17,4 +17,7 @@ app.get('/register', (req,res) =>{
 app.get('/home', (req,res) =>{
     res.sendFile('/templates/home/home.html', { root: path.join(__dirname, 'public') })
 })
+app.get('/book', (req,res) =>{
+    res.sendFile('/templates/book/book.html', { root: path.join(__dirname, 'public') })
+})
 app.listen(3000, () => console.log(' *http://localhost:3000!'));
