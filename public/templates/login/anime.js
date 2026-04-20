@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const passwordInput = document.getElementById("password-input");
     const showPasswordCheckbox = document.getElementById("show-password-checkbox");
-
-    showPasswordCheckbox.addEventListener("change", () => {
+    console.log(passwordInput, showPasswordCheckbox);
+    showPasswordCheckbox.addEventListener("click", () => {
         passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
     });
 
