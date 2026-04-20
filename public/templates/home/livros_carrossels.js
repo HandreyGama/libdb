@@ -3,6 +3,11 @@ import { pegar_livros_por_autor, pegar_capa_livro } from "../../src/modules/api.
 
 
 document.addEventListener('DOMContentLoaded',async () =>{
+    const divCarrossels = document.getElementById('livros-carossels')
+    if (!divCarrossels) {
+        return
+    }
+
     const data = await carregarAutores()
     data.autores.forEach(async element => {
         await gerar_carrossel_autores(element)
@@ -12,6 +17,9 @@ document.addEventListener('DOMContentLoaded',async () =>{
 async function gerar_carrossel_autores(autor) {
 
     const div_carrossels = document.getElementById('livros-carossels')
+    if (!div_carrossels) {
+        return
+    }
 
     const carrossel_autor = document.createElement("div")
     const carrossel_autor_livros = document.createElement("div")

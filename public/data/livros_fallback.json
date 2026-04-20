@@ -1,0 +1,124 @@
+{
+  "docs": [
+    {
+      "key": "fallback-hobbit",
+      "title": "The Hobbit",
+      "author_name": ["J.R.R. Tolkien"],
+      "first_publish_year": 1937,
+      "subject": ["fantasy", "adventure", "middle earth"],
+      "language": ["en"],
+      "number_of_pages_median": 310,
+      "description": "Bilbo Bolseiro é arrastado para uma aventura inesperada em um mundo de magos, anões e criaturas fantásticas."
+    },
+    {
+      "key": "fallback-two-towers",
+      "title": "The Two Towers",
+      "author_name": ["J.R.R. Tolkien"],
+      "first_publish_year": 1954,
+      "subject": ["fantasy", "epic", "middle earth"],
+      "language": ["en"],
+      "number_of_pages_median": 352,
+      "description": "A jornada continua com grandes batalhas, amadurecimento dos heróis e o peso crescente da missão do anel."
+    },
+    {
+      "key": "fallback-hp1",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author_name": ["J.K. Rowling"],
+      "first_publish_year": 1997,
+      "subject": ["fantasy", "wizard", "hogwarts", "young adult"],
+      "language": ["en"],
+      "number_of_pages_median": 223,
+      "description": "Um garoto descobre que é um bruxo e entra em um universo mágico cheio de amizade, mistério e aventura."
+    },
+    {
+      "key": "fallback-hp2",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "author_name": ["J.K. Rowling"],
+      "first_publish_year": 1998,
+      "subject": ["fantasy", "wizard", "mystery", "young adult"],
+      "language": ["en"],
+      "number_of_pages_median": 251,
+      "description": "Segredos antigos de Hogwarts começam a emergir enquanto Harry enfrenta um novo perigo dentro da escola."
+    },
+    {
+      "key": "fallback-pride",
+      "title": "Pride and Prejudice",
+      "author_name": ["Jane Austen"],
+      "first_publish_year": 1813,
+      "subject": ["romance", "marriage", "society"],
+      "language": ["en"],
+      "number_of_pages_median": 279,
+      "description": "Uma história afiada e elegante sobre orgulho, amor e julgamentos precipitados na sociedade inglesa."
+    },
+    {
+      "key": "fallback-emma",
+      "title": "Emma",
+      "author_name": ["Jane Austen"],
+      "first_publish_year": 1815,
+      "subject": ["romance", "society", "comedy"],
+      "language": ["en"],
+      "number_of_pages_median": 320,
+      "description": "Emma Woodhouse acredita dominar a arte dos relacionamentos, mas descobre que o coração nem sempre segue planos."
+    },
+    {
+      "key": "fallback-it-ends",
+      "title": "It Ends with Us",
+      "author_name": ["Colleen Hoover"],
+      "first_publish_year": 2016,
+      "subject": ["romance", "relationship", "drama"],
+      "language": ["en"],
+      "number_of_pages_median": 376,
+      "description": "Um romance contemporâneo intenso sobre afeto, escolhas difíceis e ciclos que precisam ser rompidos."
+    },
+    {
+      "key": "fallback-november9",
+      "title": "November 9",
+      "author_name": ["Colleen Hoover"],
+      "first_publish_year": 2015,
+      "subject": ["romance", "drama", "love"],
+      "language": ["en"],
+      "number_of_pages_median": 307,
+      "description": "Dois jovens se reencontram sempre na mesma data, enquanto suas histórias pessoais se cruzam de forma inesperada."
+    },
+    {
+      "key": "fallback-love-hypothesis",
+      "title": "The Love Hypothesis",
+      "author_name": ["Ali Hazelwood"],
+      "first_publish_year": 2021,
+      "subject": ["romance", "science", "comedy"],
+      "language": ["en"],
+      "number_of_pages_median": 356,
+      "description": "Uma comédia romântica ambientada no universo acadêmico, com muita química e diálogos afiados."
+    },
+    {
+      "key": "fallback-love-brain",
+      "title": "Love, Theoretically",
+      "author_name": ["Ali Hazelwood"],
+      "first_publish_year": 2023,
+      "subject": ["romance", "science", "relationship"],
+      "language": ["en"],
+      "number_of_pages_median": 389,
+      "description": "Carreira, ciência e sentimentos entram em colisão em uma história leve e inteligente sobre conexões humanas."
+    },
+    {
+      "key": "fallback-dom-casmurro",
+      "title": "Dom Casmurro",
+      "author_name": ["Machado de Assis"],
+      "first_publish_year": 1899,
+      "subject": ["drama", "classic", "brazilian literature"],
+      "language": ["pt"],
+      "number_of_pages_median": 256,
+      "description": "Um clássico brasileiro sobre memória, ciúme e dúvida, narrado com ironia e profundidade psicológica."
+    },
+    {
+      "key": "fallback-bras-cubas",
+      "title": "Memórias Póstumas de Brás Cubas",
+      "author_name": ["Machado de Assis"],
+      "first_publish_year": 1881,
+      "subject": ["drama", "classic", "satire"],
+      "language": ["pt"],
+      "number_of_pages_median": 224,
+      "description": "Narrado por um defunto-autor, este romance desmonta vaidades e convenções com humor mordaz."
+    }
+  ]
+}

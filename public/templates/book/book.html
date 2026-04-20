@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor - LibDB</title>
+    <link rel="stylesheet" href="/css/book.css?v=20260420c">
+    <script type="module" src="/templates/book/book.js?v=20260420c"></script>
+</head>
+<body data-theme="sepia">
+    <div class="reader-shell">
+        <header class="topbar">
+            <div class="topbar-left">
+                <a class="icon-circle back-home-btn" href="/home" aria-label="Voltar para home" title="Voltar para home">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15.4 5.4L8.8 12l6.6 6.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+                <button id="btn-open-library" class="ghost-btn" type="button" aria-expanded="false" aria-controls="library-panel">Minha lista</button>
+            </div>
+            <h1 class="brand-title">LibDB Reader</h1>
+            <div class="topbar-right">
+                <button id="theme-toggle" class="icon-circle" type="button" aria-label="Alternar tema" title="Alternar tema">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1111.2 3 7 7 0 1021 12.8z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="layout">
+            <aside id="library-panel" class="library-panel" aria-label="Minha biblioteca">
+                <div class="library-header">
+                    <h2>Minha biblioteca</h2>
+                    <div class="library-header-actions">
+                        <span id="library-count" class="count-pill">0</span>
+                        <button id="btn-close-library" class="icon-circle" type="button" aria-label="Fechar minha lista" title="Fechar minha lista">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="library-list" class="library-list"></div>
+            </aside>
+
+            <section class="book-panel">
+                <div id="book-meta" class="book-meta"></div>
+
+                <section class="reading-controls" aria-label="Controles de leitura">
+                    <div class="control-card">
+                        <h3>Status</h3>
+                        <select id="status-select" aria-label="Status do livro">
+                            <option value="quero-ler">Quero ler</option>
+                            <option value="lendo">Lendo</option>
+                            <option value="concluido">Concluido</option>
+                        </select>
+                    </div>
+
+                    <div class="control-card">
+                        <h3>Progresso</h3>
+                        <input id="progress-range" type="range" min="1" max="1" value="1" aria-label="Progresso de leitura">
+                        <p id="progress-label" class="muted">0%</p>
+                    </div>
+
+                    <div class="control-card font-card">
+                        <h3>Tipografia</h3>
+                        <div class="font-actions">
+                            <button id="font-minus" type="button">A-</button>
+                            <button id="font-plus" type="button">A+</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="actions-row" aria-label="Acoes do livro">
+                    <button id="btn-toggle-list" type="button" class="primary-btn">Adicionar a minha lista</button>
+                    <button id="btn-favorite" type="button" class="secondary-btn">Favoritar</button>
+                </section>
+
+                <section class="notes-panel" aria-label="Anotacoes">
+                    <h3>Anotacoes</h3>
+                    <textarea id="notes-input" rows="5" placeholder="Escreva seus pensamentos sobre o livro..."></textarea>
+                    <button id="btn-save-notes" type="button" class="secondary-btn">Salvar anotacoes</button>
+                </section>
+
+                <section class="highlights-panel" aria-label="Destaques">
+                    <h3>Destaques</h3>
+                    <div class="highlight-form">
+                        <input id="highlight-input" type="text" maxlength="280" placeholder="Salvar um trecho rapido...">
+                        <button id="btn-add-highlight" type="button" class="primary-btn">Adicionar</button>
+                    </div>
+                    <ul id="highlights-list" class="highlights-list"></ul>
+                </section>
+
+                <section class="preview-panel" aria-label="Previa de leitura">
+                    <h3>Modo Leitura</h3>
+                    <div id="reader-stage" class="reader-stage">
+                        <div class="page-controls">
+                            <button id="btn-prev-page" type="button" class="secondary-btn">Pagina anterior</button>
+                            <span id="page-indicator" class="page-indicator">Pagina 1 de 1</span>
+                            <button id="btn-next-page" type="button" class="secondary-btn">Proxima pagina</button>
+                            <button id="btn-fullscreen" type="button" class="secondary-btn">Tela cheia</button>
+                        </div>
+                        <article id="reader-content" class="reader-content"></article>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <button id="library-backdrop" class="library-backdrop" type="button" aria-label="Fechar lista"></button>
+    </div>
+</body>
+</html>
