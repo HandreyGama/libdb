@@ -6,6 +6,7 @@
     <title>LibDB</title>
     <link rel="stylesheet" href="../../css/cadastro.css">
     <script type="module" src="/templates/login/anime.js"></script>
+    <script type="module" src="/templates/login/cadastro.js"></script>
 </head>
 <body>
            <section id="login">
@@ -13,7 +14,7 @@
                 <h1 id="login-title"><alt=""> MYLibrary</h1>
                 <h3 id="login-subtitle">Seja Bem-vindo </h3>
                 <p id="login-sub">Realize seu cadastro para continuar</p>
-                <form id="login-form" action="">
+                <form id="login-form">
             <div></div>
                 
                 <label id="text-nome" for="nome-input">Nome:</label> 
@@ -39,8 +40,8 @@
                     
                 </div>
                 <div id="login-buttons">
-                    <button class="login-button">Cadastrar</button>
-                    <button id="register-button"><a href="/">Mudar para tela de login</a></button>
+                    <button class="login-button" type="submit">Cadastrar</button>
+                    <button id="register-button" type="button">Mudar para tela de login</button>
                 </div>
             </form>
         </div>

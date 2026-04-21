@@ -6,6 +6,7 @@
     <title>LibDB</title>
     <link rel="stylesheet" href="../../css/login.css">
     <script type="module" src="/templates/login/anime.js"></script>
+    <script type="module" src="/templates/login/login.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
                 <h1 id="login-title"><alt=""> MYLibrary</h1>
                 <h3 id="login-subtitle">Bem-vindo de volta </h3>
                 <p id="login-sub">Faça seu login para continuar</p>
-                <form id="login-form" action="">
+                <form id="login-form">
             <div></div>
 
                 <label id="text-email" for="email-input">Email: </label>
@@ -38,8 +39,8 @@
                     
                 </div>
                 <div id="login-buttons">
-                    <button class="login-button">Logar</button>
-                    <button id="register-button"><a href="/register">Criar nova conta</a></button>
+                    <button class="login-button" type="submit">Logar</button>
+                    <a id="register-button" href="/register">Criar nova conta</a>
                 </div>
             </form>
         </div>
