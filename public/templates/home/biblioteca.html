@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/templates/home/biblioteca.js"></script>
+    <link rel="stylesheet" href="css/biblioteca.css">
+    <title>Minha Biblioteca - LibDB</title>
+</head>
+<body>
+    <section id="biblioteca">
+        <div id="navbar-biblioteca">
+            <h1 id="titulo-biblioteca">📚 Minha Biblioteca</h1>
+            <div id="user-info-biblioteca">
+                <span id="library-total">0 livros</span>
+                <span id="user-email-biblioteca"></span>
+                <button id="voltar-button">← Voltar para Home</button>
+                <button id="limpar-biblioteca-button">Limpar Biblioteca</button>
+                <button id="logout-button-biblioteca">Sair</button>
+            </div>
+        </div>
+
+        <section id="biblioteca-container">
+            <div id="biblioteca-vazia" class="empty-state">
+                <h2>Sua biblioteca está vazia</h2>
+                <p>Comece adicionando livros na página de home!</p>
+                <button id="ir-para-home">Ir para Home</button>
+            </div>
+
+            <div id="biblioteca-livros" style="display: none;">
+                <div id="livros-grid"></div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

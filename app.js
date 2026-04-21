@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express()
 app.use(express.static('public'))
+app.use(express.json())
 
 app.get('/', (req,res) =>{
     res.sendFile('/templates/login/login.html', { root: path.join(__dirname, 'public') })
@@ -16,5 +17,8 @@ app.get('/register', (req,res) =>{
 })
 app.get('/home', (req,res) =>{
     res.sendFile('/templates/home/home.html', { root: path.join(__dirname, 'public') })
+})
+app.get('/biblioteca', (req,res) =>{
+    res.sendFile('/templates/home/biblioteca.html', { root: path.join(__dirname, 'public') })
 })
 app.listen(3000, () => console.log(' *http://localhost:3000!'));

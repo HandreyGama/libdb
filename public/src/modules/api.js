@@ -72,8 +72,3 @@ export  function pegar_capa_livro(cover_edition_key){
     
     return url
 }
-
-
-pegar_livros_por_autor("rowling").then(data =>{
-    console.log(data)
-})

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LibDB</title>
+    <title>LibDB - Cadastro</title>
     <link rel="stylesheet" href="../../css/cadastro.css">
-    <script type="module" src="../login/anime.js"></script>
+    <script type="module" src="/templates/login/cadastro.js"></script>
 </head>
 <body>
            <section id="login">
@@ -17,30 +17,25 @@
             <div></div>
                 
                 <label id="text-nome" for="nome-input">Nome:</label> 
-                <input type="text" id="nome-input" class="text-input" placeholder="Seunome">
+                <input type="text" id="nome-input" class="text-input" placeholder="Seu nome">
                 
                 <label id="text-email" for="email-input">Email: </label>
                 <input type="email" id="email-input" class="text-input" placeholder="user123@gmail.com">
                 
-                <label id="text-senha" for="passowrd-input">Senha: </label>
+                <label id="text-senha" for="password-input">Senha: </label>
                 <input type="password" id="password-input" class="text-input" placeholder="*******">
                 
                
                 <div id="login-checkboxes">
                     <div>
                         <input type="checkbox" name="ver-senha"  id="show-password-checkbox">
-                        <label class="text-ver" for="ver-senha">Mostrar senha</label>
+                        <label class="text-ver" for="show-password-checkbox">Mostrar senha</label>
                     </div>
-                    <div>
-                        <input type="checkbox" name="lembre-se"  id="remember-me-checkbox">
-                        <label class="text-lembre" for="">Lembre-se</label>
-                    </div>
-                    
                     
                 </div>
                 <div id="login-buttons">
-                    <button class="login-button">Cadastrar</button>
-                    <button id="register-button"><a href="/">Mudar para tela de login</a></button>
+                    <button type="submit" class="login-button">Cadastrar</button>
+                    <button type="button" id="register-button"><a href="/">Mudar para tela de login</a></button>
                 </div>
             </form>
         </div>

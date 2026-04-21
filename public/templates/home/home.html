@@ -3,22 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="templates/home/livros_carrossels.js"></script>
+    <script type="module" src="/templates/home/home.js"></script>
     <link rel="stylesheet" href="css/home.css">
     <title>Home - LibDB</title>
 </head>
 <body>
     <section id="home">
-        <h1 id="minha-biblioteca-titulo">Biblioteca Virtual</h1>
+        <div id="navbar-top">
+            <h1 id="minha-biblioteca-titulo">📚 Biblioteca Virtual</h1>
+            <div id="user-info">
+                <button id="minha-biblioteca-button">📚 Minha Biblioteca (<span id="library-count">0</span>)</button>
+                <span id="user-email"></span>
+                <button id="logout-button">Sair</button>
+            </div>
+        </div>
+        
         <section id="navbar">
             <input type="text" id="buscar-livro" placeholder="Digite um autor, livro ou tema...">
             <button id="buscar-button" type="submit">Buscar</button>
         </section>
+
+        <!-- Modal de resultados de busca -->
+        <div id="search-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Resultados da Busca</h2>
+                <div id="search-results"></div>
+            </div>
+        </div>
+
+        <!-- Modal de Avaliação -->
+        <div id="rating-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Avaliar Livro</h2>
+                <div id="rating-book-info"></div>
+                <div id="rating-stars" class="stars-container">
+                    <span class="star" data-value="1">⭐</span>
+                    <span class="star" data-value="2">⭐</span>
+                    <span class="star" data-value="3">⭐</span>
+                    <span class="star" data-value="4">⭐</span>
+                    <span class="star" data-value="5">⭐</span>
+                </div>
+                <textarea id="rating-comment" placeholder="Deixe um comentário (opcional)" rows="4"></textarea>
+                <button id="save-rating">💾 Salvar Avaliação</button>
+                <button id="add-to-library-from-rating" class="btn-adicionar-biblioteca">📚 Adicionar à Biblioteca</button>
+            </div>
+        </div>
         
         <section id="livros-container">
-            <div id="sidebar">
-
-            </div>
             <div id="carrossel-container">
                 <div id="livros-autores">
                     <div id="livros-carossels">

@@ -1,5 +1,5 @@
 import anime from 'https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.es.js';
-import { fazerLogin, estaLogado } from '../../src/modules/auth.js';
+import { registrarUsuario, estaLogado } from '../../src/modules/auth.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password-input");
     const showPasswordCheckbox = document.getElementById("show-password-checkbox");
     const loginForm = document.getElementById("login-form");
-    const loginButton = document.querySelector(".login-button");
     
     console.log(passwordInput, showPasswordCheckbox);
     
@@ -28,16 +27,29 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
     });
 
-    // Login funcional
+    // Cadastro funcional
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         
+        const nome = document.getElementById("nome-input").value;
         const email = document.getElementById("email-input").value;
         const senha = document.getElementById("password-input").value;
         
-        const resultado = fazerLogin(email, senha);
+        // Validações simples
+        if (!nome || !email || !senha) {
+            alert("Preencha todos os campos!");
+            return;
+        }
+        
+        if (senha.length < 6) {
+            alert("A senha deve ter no mínimo 6 caracteres!");
+            return;
+        }
+        
+        const resultado = registrarUsuario(email, senha);
         
         if (resultado.sucesso) {
+            alert(resultado.mensagem);
             anime({
                 targets: "#login",
                 opacity: [1, 0],
@@ -45,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 duration: 500,
                 easing: 'easeInQuad',
                 complete: () => {
-                    window.location.href = '/home';
+                    window.location.href = '/';
                 }
             });
         } else {
